@@ -7,7 +7,19 @@ st.set_page_config(page_title="MACO Calculation App By Gopal Mandloi", layout="w
 # --- APP NAME AND BANNER ---
 st.markdown(
     """
-    <h1 style='text-align: center; color: #1a237e;'>MACO Calculation App By Gopal Mandloi</h1>
+    <h1 style="
+        text-align: center;
+        background: linear-gradient(90deg, #0d1975 10%, #1976d2 40%, #00b8d4 70%, #43e97b 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        font-weight: bold;
+        letter-spacing:2px;
+        margin-bottom: 8px;
+    ">
+        MACO Calculation App By Gopal Mandloi
+    </h1>
     <div style='text-align: center;'>
         <img src='https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=800&h=200&q=80' width='180' style='margin:10px'/>
         <img src='https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=facearea&w=800&h=200&q=80' width='180' style='margin:10px'/>
