@@ -9,15 +9,15 @@ st.markdown(
     """
     <h1 style="
         text-align: center;
-        background: linear-gradient(90deg, #47c6ff 10%, #60aaff 30%, #a084ee 60%, #ff6495 80%, #ff3838 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        color: transparent;
         font-weight: bold;
         letter-spacing:2px;
         margin-bottom: 10px;
         font-size: 3em;
+        background: linear-gradient(90deg, #47c6ff 10%, #60aaff 30%, #a084ee 60%, #ff6495 80%, #ff3838 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
         ">
         MACO Calculation App By Gopal Mandloi
     </h1>
