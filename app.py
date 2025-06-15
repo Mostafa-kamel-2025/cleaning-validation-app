@@ -9,7 +9,7 @@ st.markdown(
     """
     <h1 style="
         text-align: center;
-        background: linear-gradient(90deg, #0d1975 10%, #1976d2 40%, #00b8d4 70%, #43e97b 100%);
+        background: linear-gradient(90deg, #0d1975 200%, #1976d2 30%, #00b8d4 70%, #43e97b 10%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
