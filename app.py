@@ -18,16 +18,15 @@ st.markdown(
         ">
         MACO Calculation App By Gopal Mandloi
     </h1>
-    <div style='text-align: center; margin-bottom: 16px;'>
-        <img src='https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=800&h=200&q=80' width='180' style='margin:10px; border-radius:12px;'/>
-        <img src='https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=facearea&w=800&h=200&q=80' width='180' style='margin:10px; border-radius:12px;'/>
-        <img src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=800&h=200&q=80' width='180' style='margin:10px; border-radius:12px;'/>
+    <h2 style='text-align: center; color: #1976d2; margin-bottom: 0.5em;'>View Final Results</h2>
+    <div style='text-align: center; margin-bottom: 18px;'>
+        <img src='https://cdn.pixabay.com/photo/2014/12/21/23/45/tablets-579355_1280.png' width='140' style='margin:14px; border-radius:8px;' title='Tablet'/>
+        <img src='https://cdn.pixabay.com/photo/2017/02/15/12/12/capsule-2060975_1280.png' width='140' style='margin:14px; border-radius:8px;' title='Capsule'/>
     </div>
     <h4 style='text-align: center; color: #444;'>A one-stop solution for MACO, Swab Limit, and Rinse Limit calculations in cleaning validation</h4>
     """,
     unsafe_allow_html=True
 )
 
-# ----- The rest of your app code goes here -----
-# For demonstration, here's a message:
-st.info("👆 Above section includes a colorful gradient app title and your three images. Add your app logic/code below this block.")
+# ---- Your further app logic goes below ----
+st.info("👆 Title, results heading, and tablet/capsule pictures are now shown above. Add your app logic below this block.")
