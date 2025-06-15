@@ -4,31 +4,14 @@ import io
 
 st.set_page_config(page_title="MACO Calculation App By Gopal Mandloi", layout="wide")
 
-# --- APP NAME, BANNER, AND TABLET/CAPSULE IMAGES ---
+# --- APP NAME AND BANNER ---
 st.markdown(
     """
-    <h1 style="
-        text-align: center; 
-        font-weight: bold; 
-        letter-spacing:2px; 
-        margin-bottom: 8px; 
-        font-size: 3em;
-        background: linear-gradient(90deg, #47c6ff 10%, #60aaff 30%, #a084ee 60%, #ff6495 80%, #ff3838 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        -webkit-text-fill-color: transparent;
-    ">
-        MACO Calculation App By Gopal Mandloi
-    </h1>
-    <div style='text-align: center; margin-bottom: 12px;'>
-        <img src='https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=800&h=200&q=80' width='170' style='margin:10px; border-radius:10px;'/>
-        <img src='https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=facearea&w=800&h=200&q=80' width='170' style='margin:10px; border-radius:10px;'/>
-        <img src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=800&h=200&q=80' width='170' style='margin:10px; border-radius:10px;'/>
-    </div>
-    <div style='text-align: center; margin-bottom: 12px;'>
-        <img src='https://cdn.pixabay.com/photo/2014/12/21/23/45/tablets-579355_1280.png' width='110' style='margin:10px;' title='Tablet'/>
-        <img src='https://cdn.pixabay.com/photo/2017/02/15/12/12/capsule-2060975_1280.png' width='110' style='margin:10px;' title='Capsule'/>
+    <h1 style='text-align: center; color: #87cefa;'>MACO Calculation App By Gopal Mandloi</h1>
+    <div style='text-align: center;'>
+        <img src='https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=800&h=200&q=80' width='180' style='margin:10px'/>
+        <img src='https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=facearea&w=800&h=200&q=80' width='180' style='margin:10px'/>
+        <img src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=800&h=200&q=80' width='180' style='margin:10px'/>
     </div>
     <h4 style='text-align: center; color: #444;'>A one-stop solution for MACO, Swab Limit, and Rinse Limit calculations in cleaning validation</h4>
     """,
@@ -191,6 +174,7 @@ if files_ready:
             st.dataframe(df_rinse_limits, use_container_width=True)
 
 # --- INSTRUCTIONS & BLANK TEMPLATE DOWNLOAD SECTION ---
+
 st.markdown("---")
 st.markdown("""
 <div style='background: linear-gradient(90deg,#E3F0FF 60%,#F7E3FF); border-radius:8px; padding:16px 20px 12px 20px; margin-bottom:10px; border-left: 8px solid #1565c0;'>
