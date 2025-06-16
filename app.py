@@ -21,7 +21,7 @@ st.markdown(
             🌟 MACO Calculation App
         </h1>
         <div style="text-align:center;margin-bottom:0.3em;">
-            <span style="font-size:1.5em; color:#d84315; font-weight:600; font-style:italic;">
+            <span style="font-size:1.5rem; color:#d84315; font-weight:600; font-style:italic;">
                 By Gopal Mandloi
             </span>
         </div>
