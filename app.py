@@ -1,7 +1,10 @@
 import streamlit as st
+import pandas as pd
+import os
 
 st.set_page_config(page_title="MACO Calculation App By Gopal Mandloi", layout="wide")
 
+# --- SUPER ATTRACTIVE MODERN HEADER & COMMUNITY MESSAGE ---
 st.markdown(
     """
     <div style="
@@ -15,14 +18,11 @@ st.markdown(
         position: relative;
         overflow: hidden;
     ">
-        <!-- Light faded beaker left -->
         <img src="https://cdn-icons-png.flaticon.com/512/2910/2910829.png" 
              style="position:absolute;left:24px;top:24px;width:64px;height:64px;opacity:0.12;z-index:0;" />
-        <!-- Light faded star right -->
         <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png"
              style="position:absolute;right:24px;bottom:18px;width:54px;height:54px;opacity:0.08;z-index:0;" />
         <div style="position:relative;z-index:1;">
-        
         <div style="
             background: linear-gradient(90deg,#fff3e0 60%,#e3f2fd 100%);
             border-left: 6px solid #1976d2;
@@ -42,7 +42,6 @@ st.markdown(
             Please use this app responsibly and do not misuse it.
             </span>
         </div>
-        
         <h1 style='
             text-align: center;
             color: #1565c0;
@@ -82,14 +81,13 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# The rest of your Streamlit app code continues below...
 # --- Data upload section ---
 mode = st.radio(
     "How do you want to provide data?",
     ("Use example files", "Upload my own files")
 )
 
-# Example file paths
+# Example file paths (ensure these files are present in your working directory/repo)
 example_files = {
     "Product Details": "product_details.xlsx",
     "Analytical Method Validation": "analytical_method_validation.xlsx",
@@ -115,17 +113,20 @@ else:
 st.markdown("### Download Sample (Filled) Templates")
 if mode == "Use example files":
     def file_download_button(filepath, button_label):
-        if os.path.exists(filepath):
-            with open(filepath, "rb") as f:
-                data = f.read()
-            st.download_button(
-                label=button_label,
-                data=data,
-                file_name=os.path.basename(filepath),
-                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-            )
-        else:
-            st.warning(f"File not found: {filepath}")
+        try:
+            if os.path.exists(filepath):
+                with open(filepath, "rb") as f:
+                    data = f.read()
+                st.download_button(
+                    label=button_label,
+                    data=data,
+                    file_name=os.path.basename(filepath),
+                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                )
+            else:
+                st.warning(f"File not found: {filepath}")
+        except Exception as e:
+            st.warning(f"Cannot access file: {filepath}. Error: {e}")
 
     file_download_button(example_files["Product Details"], "Download Product Details (filled, .xlsx)")
     file_download_button(example_files["Analytical Method Validation"], "Download Analytical Method Validation (filled, .xlsx)")
@@ -285,42 +286,3 @@ st.markdown("""
 - If you get a column/sheet name error, please check your Excel file and use the sample template for reference.
 - All files must be in `.xlsx` format.
 """)
-
-# --- ATTRACTIVE DISCLAIMER AT THE END ---
-DISCLAIMER_HTML = """
-<div style="
-    background: linear-gradient(90deg, #FFEEEC 50%, #E0F7FA 100%);
-    border: 3px solid #FF9800;
-    border-radius: 16px;
-    padding: 22px 32px;
-    margin: 32px 0 0 0;
-    box-shadow: 0 6px 24px #ffecb3;
-">
-    <h2 style="color:#d84315; margin-top:0;">🚧 Cleaning Validation APP by <em>Gopal Mandloi</em> 🚧</h2>
-    <p style="font-size:17px;">
-        <b>This App is <span style="color:#d84315;">Under Development</span> — Please Read!</b>
-    </p>
-    <p>
-        Thank you for visiting the <b>MACO Calculation App</b>! This tool is <b>actively being developed</b> and may have bugs,
-        especially in file uploading (templates, multi-file) and result accuracy.<br>
-        <span style="color:#b71c1c; font-weight:bold;">Please do not use this app for official or critical calculations at this stage.</span>
-    </p>
-    <ul style="margin-top:16px;">
-        <li><b>Upcoming Features:</b>
-            <ul>
-                <li>📄 Automatic protocol and PDF report generation</li>
-                <li>🖱️ One-click calculation/export of all results</li>
-                <li>⚡ Enhanced automatic result calculation</li>
-            </ul>
-        </li>
-    </ul>
-    <p>Once all bugs are fixed, I’ll create a <b>detailed video guide</b> on how to use this app.</p>
-    <div style="margin:14px 0; color:#1565c0;"><b>🔎 Your Feedback Needed:</b> Please share your expectations, feature requests, or improvement ideas. This helps ensure I address all needs during development.</div>
-    <div style="margin-bottom:14px; color:#388e3c;"><b>🤝 Contributors Welcome:</b> This app is 100% free and built individually with limited resources. If you know Python, Java, HTML, or related tech and want to help, please reach out!</div>
-    <div style="font-size:16px; color:#6d4c41;">
-        With your feedback and support, I’m confident we’ll make this app even better, very soon.<br>
-        <span style="float:right; font-style:italic;">— Gopal Mandloi</span>
-    </div>
-</div>
-"""
-st.markdown(DISCLAIMER_HTML, unsafe_allow_html=True)
