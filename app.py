@@ -24,7 +24,7 @@ st.markdown("### View Final Results")
 # --- Data upload section ---
 mode = st.radio(
     "How do you want to provide data?",
-    ("Use example files from repo", "Upload my own files")
+    ("Use example files", "Upload my own files")
 )
 
 # Example file paths
@@ -51,7 +51,7 @@ else:
 
 # --- FILLED TEMPLATE DOWNLOAD SECTION ---
 st.markdown("### Download Sample (Filled) Templates")
-if mode == "Use example files from repo":
+if mode == "Use example files":
     def file_download_button(filepath, button_label):
         if os.path.exists(filepath):
             with open(filepath, "rb") as f:
@@ -71,7 +71,7 @@ if mode == "Use example files from repo":
     file_download_button(example_files["Equipment Details"], "Download Equipment Details (filled, .xlsx)")
     file_download_button(example_files["Rating Criteria (4 sheets)"], "Download Rating Criteria (filled, .xlsx)")
 else:
-    st.info("Use your own files above. Sample templates are only available in 'Use example files from repo' mode.")
+    st.info("Use your own files above. Sample templates are only available in 'Use example files' mode.")
 
 st.markdown("""
 **How to use this App (Procedure):**
