@@ -1,25 +1,44 @@
 import streamlit as st
 import pandas as pd
-import io
 import os
 
 st.set_page_config(page_title="MACO Calculation App By Gopal Mandloi", layout="wide")
 
-# --- APP NAME AND BANNER ---
+# --- ATTRACTIVE APP HEADER ---
 st.markdown(
     """
-    <h1 style='text-align: center; color: #0d197;'>MACO Calculation App By Gopal Mandloi</h1>
-    <div style='text-align: center;'>
-        <img src='https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=800&h=200&q=80' width='180' style='margin:10px'/>
-        <img src='https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=facearea&w=800&h=200&q=80' width='180' style='margin:10px'/>
-        <img src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=800&h=200&q=80' width='180' style='margin:10px'/>
+    <div style="padding: 28px 2vw 18px 2vw; margin-bottom:32px;
+        background: linear-gradient(90deg, #FFF8E1 70%, #E3F2FD 100%);
+        border-radius: 18px; box-shadow: 0 6px 32px #ffd18030;">
+        <h1 style="
+            text-align: center;
+            color: #1565c0;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 0.3em;
+            letter-spacing: 2px;
+            text-shadow: 1px 2px 12px #bbdefb;
+        ">
+            🌟 MACO Calculation App By <span style="color:#d84315;font-style:italic;">Gopal Mandloi</span> 🌟
+        </h1>
+        <h3 style="
+            text-align: center;
+            color: #388e3c;
+            font-weight: 600;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            margin-top:0;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            text-shadow: 0 1px 6px #c8e6c9;
+        ">
+            A one-stop solution for <span style="color:#1565c0">MACO</span>,
+            <span style="color:#ffa000">Swab Limit</span>, and
+            <span style="color:#ab47bc">Rinse Limit</span> calculations in cleaning validation
+        </h3>
     </div>
-    <h4 style='text-align: center; color: #444;'>A one-stop solution for MACO, Swab Limit, and Rinse Limit calculations in cleaning validation</h4>
     """,
     unsafe_allow_html=True
 )
-
-st.markdown("### View Final Results")
 
 # --- Data upload section ---
 mode = st.radio(
@@ -178,7 +197,7 @@ if files_ready:
             'Eq. ID': row['Eq. ID'],
             'Surface Area (m2)': eq_surface,
             'Rinse Limit (mg)': round(rinse_limit, 6),
-            'Rinse Volume (L)': round(rinse_vol_L, 2)   # Shows Liters!
+            'Rinse Volume (L)': round(rinse_vol_L, 2)
         })
     df_rinse_limits = pd.DataFrame(rinse_limits)
 
