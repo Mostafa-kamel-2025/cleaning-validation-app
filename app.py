@@ -167,18 +167,18 @@ if files_ready:
     swab_surface = df['Swab Surface in M. Sq.'].iloc[0]
     swab_limit = lowest_maco * swab_surface / total_surface_area_with_margin
 
-    # Rinse limit & volume per equipment (output only in LITERS)
+    # Rinse limit & volume per equipment (output in LITERS)
     rinse_limits = []
     for idx, row in df_equip.iterrows():
         eq_surface = row['Product contact Surface Area (m2)']
         rinse_limit = lowest_maco * eq_surface / total_surface_area_with_margin
-        rinse_vol_L = rinse_limit / 10 * 1000  # Rinse volume in Liters
+        rinse_vol_L = rinse_limit / 10  # Rinse volume in Liters
         rinse_limits.append({
             'Eq. Name': row['Eq. Name'],
             'Eq. ID': row['Eq. ID'],
             'Surface Area (m2)': eq_surface,
             'Rinse Limit (mg)': round(rinse_limit, 6),
-            'Rinse Volume (L)': round(rinse_vol_L, 2)   # Now shows Liters!
+            'Rinse Volume (L)': round(rinse_vol_L, 2)   # Shows Liters!
         })
     df_rinse_limits = pd.DataFrame(rinse_limits)
 
