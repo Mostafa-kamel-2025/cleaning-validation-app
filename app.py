@@ -167,7 +167,7 @@ if files_ready:
     swab_surface = df['Swab Surface in M. Sq.'].iloc[0]
     swab_limit = lowest_maco * swab_surface / total_surface_area_with_margin
 
-    # Rinse limit & volume per equipment (output only in ml)
+    # Rinse limit & volume per equipment (output only in L)
     rinse_limits = []
     for idx, row in df_equip.iterrows():
         eq_surface = row['Product contact Surface Area (m2)']
@@ -178,7 +178,7 @@ if files_ready:
             'Eq. ID': row['Eq. ID'],
             'Surface Area (m2)': eq_surface,
             'Rinse Limit (mg)': round(rinse_limit, 6),
-            'Rinse Volume (ml)': round(rinse_vol_ml, 2)
+            'Rinse Volume (L)': round(rinse_vol_L, 2)
         })
     df_rinse_limits = pd.DataFrame(rinse_limits)
 
@@ -215,7 +215,7 @@ if files_ready:
     with col5:
         if st.button("💧 Rinse Limit & Volume (Equipment-wise)", use_container_width=True):
             st.success("**Rinse Limit & Volume per Equipment**")
-            st.write("**(Rinse Volume is in ml only)**")
+            st.write("**(Rinse Volume is in L only)**")
             st.dataframe(df_rinse_limits, use_container_width=True)
 
 st.markdown("""
