@@ -172,7 +172,7 @@ if files_ready:
     for idx, row in df_equip.iterrows():
         eq_surface = row['Product contact Surface Area (m2)']
         rinse_limit = lowest_maco * eq_surface / total_surface_area_with_margin
-        rinse_vol_L = rinse_limit / 10  # Rinse volume in Liters
+        rinse_vol_L = rinse_limit / 10 * 1000  # Rinse volume in Liters
         rinse_limits.append({
             'Eq. Name': row['Eq. Name'],
             'Eq. ID': row['Eq. ID'],
