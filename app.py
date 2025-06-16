@@ -81,13 +81,12 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# --- Data upload section ---
+# --- APP LOGIC BELOW (unchanged) ---
 mode = st.radio(
     "How do you want to provide data?",
     ("Use example files", "Upload my own files")
 )
 
-# Example file paths (ensure these files are present in your working directory/repo)
 example_files = {
     "Product Details": "product_details.xlsx",
     "Analytical Method Validation": "analytical_method_validation.xlsx",
@@ -109,7 +108,6 @@ else:
     uploaded_equips = example_files["Equipment Details"]
     uploaded_criteria = example_files["Rating Criteria (4 sheets)"]
 
-# --- FILLED TEMPLATE DOWNLOAD SECTION ---
 st.markdown("### Download Sample (Filled) Templates")
 if mode == "Use example files":
     def file_download_button(filepath, button_label):
@@ -157,7 +155,6 @@ def read_excel_or_none(f, **kwargs):
 files_ready = all([uploaded_details, uploaded_amv, uploaded_solclean, uploaded_equips, uploaded_criteria])
 
 if files_ready:
-    # If using example files, they are paths; if upload, they are UploadedFile
     df = read_excel_or_none(uploaded_details)
     df_equip = read_excel_or_none(uploaded_equips)
     templates = None
@@ -174,7 +171,6 @@ if files_ready:
     toxicity_template = templates['Toxicity']
     cleaning_template = templates['Cleaning']
 
-    # Assign groups
     def assign_solubility_group(sol, template):
         if pd.isna(sol): return None
         sol = str(sol).strip().lower()
@@ -211,7 +207,6 @@ if files_ready:
     )
     df['BatchSize_Dose_Ratio'] = df['Min Batch Size (kg)'] / df['Max Dose (mg)']
 
-    # Calculations
     prev_worst_case = df.loc[df['Worst_Case_Rating'].idxmax()]
     next_worst_case = df.loc[df['BatchSize_Dose_Ratio'].idxmin()]
     min_batch_next_kg = next_worst_case['Min Batch Size (kg)']
@@ -230,12 +225,11 @@ if files_ready:
     swab_surface = df['Swab Surface in M. Sq.'].iloc[0]
     swab_limit = lowest_maco * swab_surface / total_surface_area_with_margin
 
-    # Rinse limit & volume per equipment (output in LITERS)
     rinse_limits = []
     for idx, row in df_equip.iterrows():
         eq_surface = row['Product contact Surface Area (m2)']
         rinse_limit = lowest_maco * eq_surface / total_surface_area_with_margin
-        rinse_vol_L = rinse_limit / 10  # Rinse volume in Liters
+        rinse_vol_L = rinse_limit / 10
         rinse_limits.append({
             'Eq. Name': row['Eq. Name'],
             'Eq. ID': row['Eq. ID'],
@@ -286,3 +280,47 @@ st.markdown("""
 - If you get a column/sheet name error, please check your Excel file and use the sample template for reference.
 - All files must be in `.xlsx` format.
 """)
+
+# --- ATTRACTIVE DISCLAIMER AT THE BOTTOM ---
+st.markdown(
+    """
+    <div style="
+        background: linear-gradient(90deg, #FFEEEC 50%, #E0F7FA 100%);
+        border: 3px solid #FF9800;
+        border-radius: 16px;
+        padding: 22px 32px;
+        margin: 48px 0 0 0;
+        box-shadow: 0 6px 24px #ffecb3;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    ">
+        <h2 style="color:#d84315; margin-top:0;">🚧 Cleaning Validation APP by <em>Gopal Mandloi</em> 🚧</h2>
+        <p style="font-size:17px;">
+            <b>This App is <span style="color:#d84315;">Under Development</span> — Please Read!</b>
+        </p>
+        <p>
+            Thank you for visiting the <b>MACO Calculation App</b>! This tool is <b>actively being developed</b> and may have bugs,
+            especially in file uploading (templates, multi-file) and result accuracy.<br>
+            <span style="color:#b71c1c; font-weight:bold;">Please do not use this app for official or critical calculations at this stage.</span>
+        </p>
+        <ul style="margin-top:16px;">
+            <li><b>Upcoming Features:</b>
+                <ul>
+                    <li>📄 Automatic protocol and PDF report generation</li>
+                    <li>🖱️ One-click calculation/export of all results</li>
+                    <li>⚡ Enhanced automatic result calculation</li>
+                </ul>
+            </li>
+        </ul>
+        <p>Once all bugs are fixed, I’ll create a <b>detailed video guide</b> on how to use this app.</p>
+        <div style="margin:14px 0; color:#1565c0;"><b>🔎 Your Feedback Needed:</b> Please share your expectations, feature requests, or improvement ideas. This helps ensure I address all needs during development.</div>
+        <div style="margin-bottom:14px; color:#388e3c;"><b>🤝 Contributors Welcome:</b> This app is 100% free and built individually with limited resources. If you know Python, Java, HTML, or related tech and want to help, please reach out!</div>
+        <div style="font-size:16px; color:#6d4c41;">
+            With your feedback and support, I’m confident we’ll make this app even better, very soon.<br>
+            <span style="float:right; font-style:italic;">— Gopal Mandloi</span>
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
