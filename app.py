@@ -5,75 +5,77 @@ st.set_page_config(page_title="MACO Calculation App By Gopal Mandloi", layout="w
 st.markdown(
     """
     <div style="
-        margin: 0 auto 36px auto; 
-        padding: 28px 2vw 10px 2vw;
+        margin: 0 auto 34px auto; 
+        padding: 30px 2vw 16px 2vw;
         max-width: 900px;
-        background: linear-gradient(90deg, #FFF8E1 65%, #E3F2FD 100%);
+        background: linear-gradient(93deg, #fffde7 65%, #e3f2fd 100%);
         border-radius: 22px; 
         box-shadow: 0 8px 36px #ffe0b270, 0 2px 8px #90caf9b0;
         border: 2.5px solid #ffd54f;
         position: relative;
         overflow: hidden;
     ">
+        <!-- Light faded beaker left -->
         <img src="https://cdn-icons-png.flaticon.com/512/2910/2910829.png" 
-             style="position:absolute;left:24px;top:24px;width:64px;height:64px;opacity:0.13;z-index:0;" />
+             style="position:absolute;left:24px;top:24px;width:64px;height:64px;opacity:0.12;z-index:0;" />
+        <!-- Light faded star right -->
         <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png"
-             style="position:absolute;right:24px;bottom:20px;width:60px;height:60px;opacity:0.12;z-index:0;" />
+             style="position:absolute;right:24px;bottom:18px;width:54px;height:54px;opacity:0.08;z-index:0;" />
         <div style="position:relative;z-index:1;">
+        
+        <div style="
+            background: linear-gradient(90deg,#fff3e0 60%,#e3f2fd 100%);
+            border-left: 6px solid #1976d2;
+            border-radius: 10px;
+            padding: 12px 24px 12px 30px;
+            color: #444;
+            font-size: 1.09em;
+            font-family: Segoe UI, Arial, sans-serif;
+            box-shadow: 0 2px 14px #cfd8dc36;
+            margin-bottom: 18px;
+        ">
+            <span style="font-size:1.25em;">💬</span>
+            <b>Message from Gopal Mandloi:</b>
+            <span style="color:#1976d2;">
+            This app is shared to help the pharma professional community and ultimately save patient lives by ensuring correct MACO assessments.<br>
+            <b style="color:#d84315;">This tool is completely free of cost</b> — if anyone asks you for money or favors to use this app, please <b>inform me directly</b>.<br>
+            Please use this app responsibly and do not misuse it.
+            </span>
+        </div>
+        
         <h1 style='
             text-align: center;
             color: #1565c0;
             font-family: Segoe UI, Arial, sans-serif;
-            font-size: 2.8rem;
-            margin-bottom: 0.2em;
+            font-size: 2.65rem;
+            margin-bottom: 0.18em;
             letter-spacing: 2px;
-            font-weight: 800;
+            font-weight: 900;
             text-shadow: 2px 6px 18px #bbdefb, 0 2px 1px #fffde7;
         '>
-            <span>🌟 MACO Calculation App</span> <br>
-            <span style="font-size:1.1rem; color:#d84315; font-weight:600; font-style:italic;">
+            <span>🌟 MACO Calculation App</span>
+        </h1>
+        <div style="text-align:center; margin-bottom:0.5em;">
+            <span style="font-size:1.2em; color:#d84315; font-weight:600; font-style:italic;">
                 By Gopal Mandloi
             </span>
-        </h1>
-        
+        </div>
         <h3 style='
             text-align: center;
             color: #388e3c;
             font-weight: 700;
             font-family: Segoe UI, Arial, sans-serif;
             margin-top:0;
-            font-size: 1.22rem;
+            font-size: 1.20rem;
             letter-spacing: 1px;
             text-shadow: 0 1px 8px #c8e6c9;
-            padding-bottom: 0.15em;
+            padding-bottom: 0.12em;
         '>
-            🚀 A one-stop solution for <span style="color:#1565c0;background:#fffde7;padding:0 4px;border-radius:6px;">MACO</span>,
-            <span style="color:#ffa000;background:#fff;padding:0 4px;border-radius:6px;">Swab Limit</span>, and
-            <span style="color:#8e24aa;background:#ede7f6;padding:0 4px;border-radius:6px;">Rinse Limit</span> calculations in cleaning validation,
+            🚀 A one-stop solution for <span style="color:#1565c0;background:#fffde7;padding:0 5px;border-radius:7px;">MACO</span>,
+            <span style="color:#ffa000;background:#fff;padding:0 5px;border-radius:7px;">Swab Limit</span>, and
+            <span style="color:#8e24aa;background:#ede7f6;padding:0 5px;border-radius:7px;">Rinse Limit</span> calculations in cleaning validation,<br>
             <span style="color:#d84315;">with automatic identification of Previous Worst Case and Next Worst Case products.</span>
         </h3>
-        
-        <div style="
-            margin-top: 18px;
-            background: linear-gradient(90deg, #fffde7 60%, #e3f2fd 100%);
-            border-left: 5px solid #1976d2;
-            border-radius: 10px;
-            padding: 10px 20px 10px 24px;
-            color: #444;
-            font-size: 1.08em;
-            font-family: Segoe UI, Arial, sans-serif;
-            box-shadow: 0 2px 12px #cfd8dc50;
-        ">
-            <span style="font-size:1.2em;">💡</span>
-            <b>Note from Gopal:</b>
-            <span style="color:#1565c0;">
-            This app is shared to support the pharma community and aims to help save patient lives by ensuring correct MACO assessment.
-            <br>
-            <b style="color:#d84315;">This tool is 100% free of cost.</b> If anyone asks you for money or any favor to use this app, please inform me immediately. 
-            <br>
-            Kindly use this app responsibly and do not misuse it.
-            </span>
-        </div>
         </div>
     </div>
     """,
