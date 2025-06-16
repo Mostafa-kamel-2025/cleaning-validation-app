@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import io
 
-# --- WELCOME & DISCLAIMER MESSAGE (Pure Markdown, no HTML) ---
+# --- WELCOME & DISCLAIMER MESSAGE (Pure Markdown, always visible at the very top) ---
 WELCOME_MESSAGE = """
 🚧 **Cleaning Validation APP by _Gopal Mandloi_** 🚧
 
@@ -36,6 +36,7 @@ With your feedback and support, I’m confident we’ll make this app even bette
 *— Gopal Mandloi*
 """
 
+# Always put disclaimer at the very top!
 st.set_page_config(page_title="MACO Calculation App By Gopal Mandloi", layout="wide")
 st.markdown(WELCOME_MESSAGE)
 
