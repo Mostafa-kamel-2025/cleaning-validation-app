@@ -46,7 +46,7 @@ st.markdown(
             font-size: 1.09em;
             font-family: Segoe UI, Arial, sans-serif;
             box-shadow: 0 2px 14px #cfd8dc36;
-            margin-bottom: 0.5em;
+            margin-bottom: 0.7em;
             max-width:750px;
             margin-left:auto;
             margin-right:auto;
@@ -54,6 +54,30 @@ st.markdown(
             <b>Message from Gopal Mandloi:</b> This app is shared to help the pharma professional community and ultimately save patient lives by ensuring correct MACO assessments.<br>
             <span style="color:#d84315;font-weight:600;">This tool is completely free of cost</span> — if anyone asks you for money or favors to use this app, please <b>inform me directly</b>.<br>
             Please use this app responsibly and do not misuse it.
+        </div>
+        <div style="
+            background: #fffde7;
+            border-left: 5px solid #d84315;
+            border-radius: 8px;
+            padding: 11px 16px 11px 20px;
+            color: #222;
+            font-size:1.05em;
+            font-family: Segoe UI, Arial, sans-serif;
+            box-shadow: 0 2px 12px #ffe0b2a0;
+            margin-bottom:0.7em;
+            max-width:750px;
+            margin-left:auto;
+            margin-right:auto;
+        ">
+            <span style="font-size:1.1em;">📺</span>
+            <b>Watch full calculation approach & stepwise explanation on my YouTube channel:</b><br>
+            <span style="font-size:1.13em;color:#d84315;font-weight:600;">
+                Technical Talks_Gopal Mandloi
+            </span>
+            <br>
+            <a href="https://www.youtube.com/@TechnicalTalksGopalMandloi" target="_blank" style="color:#1565c0;font-weight:600;text-decoration:underline;">
+                Watch on YouTube
+            </a>
         </div>
     </div>
     """,
